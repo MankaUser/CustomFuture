@@ -205,7 +205,7 @@ end
 local function getasset(path)
 	if not betterisfile(path) then
 		local req = requestfunc({
-			Url = "https://raw.githubusercontent.com/joeengo/Future/main/"..path:gsub("Future/assets", "assets"),
+			Url = "https://raw.githubusercontent.com/MankaUser/CustomFuture/main/"..path:gsub("CustomFuture/assets", "assets"),
 			Method = "GET"
 		})
         print("[Future] downloading "..path.." asset.")
@@ -219,7 +219,7 @@ end
 local function getscript(id) 
     local id = id or shared.FuturePlaceId or game.PlaceId
     id = tostring(id)
-    local req = requesturl("Future/scripts/"..id..".lua")
+    local req = requesturl("CustomFuture/scripts/"..id..".lua")
     if type(req) == "string" then
         return loadstring(req)()
     else
