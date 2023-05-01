@@ -117,7 +117,7 @@ if game:GetService("CoreGui"):FindFirstChild("RobloxVRGui") then
     game:GetService("CoreGui"):FindFirstChild("RobloxVRGui"):Destroy()
 end
 
-local GuiLibrary = loadstring(requesturl("Future/GuiLibrary.lua"))()
+local GuiLibrary = loadstring(requesturl("CustomFuture/GuiLibrary.lua"))()
 
 shared.Future.GuiLibrary = GuiLibrary
 local getcustomasset = --[[getsynasset or getcustomasset or]] GuiLibrary["getRobloxAsset"]
