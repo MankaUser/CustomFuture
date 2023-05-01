@@ -21,8 +21,8 @@ local function requesturl(url, bypass)
     if isfile(url) and shared.FutureDeveloper then 
         return readfile(url)
     end
-    local repourl = bypass and "https://raw.githubusercontent.com/joeengo/" or "https://raw.githubusercontent.com/joeengo/Future/main/"
-    local url = url:gsub("Future/", "")
+    local repourl = bypass and "https://raw.githubusercontent.com/MankaUser/" or "https://raw.githubusercontent.com/MankaUser/CustomFuture/main/"
+    local url = url:gsub("CustomFuture/", "")
     local req = requestfunc({
         Url = repourl..url,
         Method = "GET"
@@ -34,7 +34,7 @@ end
 local function getasset(path)
 	if not isfile(path) then
 		local req = requestfunc({
-			Url = "https://raw.githubusercontent.com/joeengo/Future/main/"..path:gsub("Future/assets", "assets"),
+			Url = "https://raw.githubusercontent.com/MankaUser/CustomFuture/main/"..path:gsub("CustomFuture/assets", "assets"),
 			Method = "GET"
 		})
         print("[Future] downloading "..path.." asset.")
