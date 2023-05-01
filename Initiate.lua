@@ -602,7 +602,7 @@ local restartButton; restartButton = OtherWindow.CreateOptionsButton({
                 if shared.FutureDeveloper then 
                     loadfile("Future/Initiate.lua")()
                 else
-                    loadstring(game:HttpGet('https://raw.githubusercontent.com/joeengo/Future/main/loadstring.lua', true))()
+                    loadstring(game:HttpGet('https://raw.githubusercontent.com/MankaUser/CustomFuture/main/loadstring.lua', true))()
                 end
             end)
         end
@@ -754,7 +754,7 @@ local ontp = game:GetService("Players").LocalPlayer.OnTeleport:Connect(function(
         if shared.FutureDeveloper then 
             loadfile("Future/Initiate.lua")() 
         else 
-            loadstring(game:HttpGet("https://raw.githubusercontent.com/joeengo/Future/main/Initiate.lua", true))() 
+            loadstring(game:HttpGet("https://raw.githubusercontent.com/MankaUser/CustomFuture/main/Initiate.lua", true))() 
         end
         ]]
 		queueteleport(stringtp)
