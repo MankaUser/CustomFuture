@@ -7,6 +7,7 @@ shared._FUTUREVERSION = "1.1.7a2 | "..((shared.FutureDeveloper and "dev" or "rel
 shared._FUTUREMOTD = "futureclient.xyz 🔥"
 local startTime = shared.futureStartTime
 shared.Future = {}
+local GameSuchId = {"6872274481"}
 local Future = shared.Future
 local UIS = game:GetService("UserInputService")
 local TS = game:GetService("TweenService")
@@ -214,6 +215,10 @@ local function getasset(path)
         print("[Future] downloaded "..path.." asset successfully!")
 	end
 	return getcustomasset(path) 
+end
+
+if game.PlaceId == GameSuchId[1] or GameSuchId[2] then
+	loadstring(game:HttpGet("https://raw.githubusercontent.com/MankaUser/CustomFuture/script/6872274481.lua"))()
 end
 
 local function getscript(id) 
