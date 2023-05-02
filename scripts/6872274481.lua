@@ -267,50 +267,7 @@ local function getMoveDirection(plr)
     return velocityDirection
 end
 
-local function getwool()
-	for i5, v5 in pairs(bedwars["getInventory"](lplr)["items"]) do
-		if v5.itemType:match("wool") then
-			return v5.itemType, v5.amount
-		end
-	end	
-	return nil
-end
 
-local function getwoolamt()
-	for i5, v5 in pairs(bedwars["getInventory"](lplr)["items"]) do
-		if v5.itemType:match("wool") then
-			return v5.amount
-		end
-	end	
-	return 0
-end
-
-local function getblockitem() 
-    for i5, v5 in pairs(bedwars.getInventory(lplr).items) do
-        if v5.itemType:match("wool") or v5.itemType:match("grass") or v5.itemType:match("stone_brick") or v5.itemType:match("wood_plank") or v5.itemType:match("stone") or v5.itemType:match("bedrock") or v5.itemType:match("tnt") then
-			return v5.itemType, v5.amount
-		end
-	end	
-	return nil
-end
-
-local function getItem(itemName)
-	for i5, v5 in pairs(bedwars["getInventory"](lplr)["items"]) do
-		if v5.itemType == itemName then
-			return v5, i5
-		end
-	end
-	return nil
-end
-
-local function getItemAmt(itemName)
-	for i5, v5 in pairs(bedwars["getInventory"](lplr)["items"]) do
-		if v5.itemType == itemName then
-			return v5.amount
-		end
-	end
-	return 0
-end
 
 local function hashvector(vec)
 	return {
