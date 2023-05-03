@@ -426,3 +426,61 @@ do
         Function = function() end, 
     })
 end
+function bedCheck()
+    if lplr.leaderstats.Bed.Value ~= "✅" then
+        local sound = Instance.new("Sound")
+        sound.Parent = workspace
+        sound.SoundId = getasset("Future/assets/MCsounds/bedbroken.mp3")
+        sound:Play()
+        wait(7)
+        sound:remove()
+    end
+end
+local MinecraftSound = {["Enabled"] = false}; LongJump = GuiLibrary.Objects.MovementWindow.API.CreateOptionsButton({
+        ["Name"] = "MinecraftSounds",
+        ["Function"] = function(callback) 
+	getgenv().mcsounds = callback
+        if getgenv().mcsounds then
+            spawn(function()
+                lplr.leaderstats.Bed:GetPropertyChangedSignal("Value"):Connect(bedCheck)
+            end)
+            spawn(function()
+                Client:WaitFor("BedwarsBedBreak"):andThen(function(p13)
+                    p13:Connect(function(p14)
+                        local sound = Instance.new("Sound")
+                        sound.Parent = workspace
+                        sound.SoundId = getcustomassetfunc("Future/assets/MCsounds/bedbreak.mp3")
+                        sound:Play()
+                        wait(4)
+                        sound:remove()
+                    end)
+                end)
+            end)
+            local oldsounds = gamesound
+            local newsounds = gamesound
+            newsounds.UI_CLICK = "rbxassetid://535716488"
+            newsounds.PICKUP_ITEM_DROP = getcustomassetfunc("Future/assets/MCsounds/pickup.mp3")
+            newsounds.KILL = "rbxassetid://1053296915"
+            newsounds.ERROR_NOTIFICATION = ""
+            newsounds.DAMAGE_1 = "rbxassetid://6361963422"
+            newsounds.DAMAGE = "rbxassetid://6361963422"
+            newsounds.DAMAGE_2 = "rbxassetid://6361963422"
+            newsounds.DAMAGE_3 = "rbxassetid://6361963422"
+            newsounds.SWORD_SWING_1 = ""
+            newsounds.SWORD_SWING_2 = ""
+            newsounds.BEDWARS_PURCHASE_ITEM = getcustomassetfunc("Future/assets/MCsounds/buyitem.mp3")
+            newsounds.STATIC_HIT = "rbxassetid://6361963422"
+            newsounds.STONE_BREAK = "rbxassetid://6496157434"
+            newsounds.WOOL_BREAK = getcustomassetfunc("Future/assets/MCsounds/woolbreak.mp3")
+            newsounds.WOOD_BREAK = getcustomassetfunc("Future/assets/MCsounds/breakwood.mp3")
+            newsounds.GLASS_BREAK = getcustomassetfunc("Future/assets/MCsounds/glassbreak.mp3")
+            newsounds.TNT_HISS_1 = getcustomassetfunc("Future/assets/MCsounds/tnthiss.mp3")
+            newsounds.TNT_EXPLODE_1 = getcustomassetfunc("Future/assets/MCsounds/tntexplode.mp3")
+            gamesound = newsounds
+        else
+            gamesound = oldsounds
+        end
+    end								
+									
+									
+									
